@@ -28,7 +28,6 @@ Increase app usage and user retention with Azure Mobile Engagement.
 - Open `azme.sln`
 
 - Test locally the emulation of the SDK or create your own AzME campaigns to test push notification, Web Announcement, Poll or Data Push.
-```
 
 ### Run the app : use your own AzME Endpoint 
 

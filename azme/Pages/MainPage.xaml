@@ -1,0 +1,237 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<engagement:EngagementPageOverlay
+  x:Class="Azme.Pages.MainPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="using:Azme"
+  xmlns:engagement="using:Microsoft.Azure.Engagement.Overlay"
+  xmlns:selectors="using:Azme.TemplateSelector"
+  xmlns:controls="using:Azme.Controls"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+>
+  <Grid Background="White" x:Name="announcementGrid">
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="SplitViewModeStateGroup">
+        <VisualState x:Name="WideState">
+          <VisualState.StateTriggers>
+            <AdaptiveTrigger MinWindowWidth="800"  />
+          </VisualState.StateTriggers>
+          <VisualState.Setters>
+            <Setter Target="SplitView.DisplayMode" Value="CompactInline" />
+            <Setter Target="SplitView.IsPaneOpen" Value="True" />
+          </VisualState.Setters>
+        </VisualState>
+        <VisualState x:Name="NarrowState">
+          <VisualState.StateTriggers>
+            <AdaptiveTrigger MinWindowWidth="0"  />
+          </VisualState.StateTriggers>
+          <VisualState.Setters>
+            <Setter Target="SplitView.DisplayMode" Value="Overlay" />
+            <Setter Target="SplitView.IsPaneOpen" Value="False" />
+          </VisualState.Setters>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="48" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <StackPanel
+        Orientation="Horizontal"
+        Grid.Row="0"
+        Background="{StaticResource PrimaryBrush}"
+      >
+        <Button 
+          x:Name="HamburgerButton"  
+          Width="48" 
+          Background="Transparent" 
+          Foreground="{StaticResource TextPrimaryBrush}"
+          Tapped="HamburgerButton_Tapped"
+        >
+          <Button.Content>
+            <FontIcon 
+            FontFamily="Segoe MDL2 Assets" 
+            Glyph="&#xE700;" 
+          />
+          </Button.Content>
+        </Button>
+
+        <TextBlock
+          x:Name="TextBlockTitlePage"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource TextPrimaryBrush}"
+          FontWeight="Bold"
+          FontSize="14"
+        />
+      </StackPanel>
+      <SplitView
+        x:Name="SplitView"
+        DisplayMode="CompactInline"
+        IsPaneOpen="True"
+        CompactPaneLength="48"
+        OpenPaneLength="240"
+        PanePlacement="Left"
+        Grid.Row="1"
+      >
+        <SplitView.Pane>
+          <ListView
+          x:Name="ListViewMenu"
+          HorizontalAlignment="Stretch"
+          ItemsSource="{Binding MenuEntries}"
+          SelectionMode="Single"
+          SelectionChanged="ListViewMenu_SelectionChanged"
+         >
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <selectors:MenuTemplateSelector Content="{Binding}">
+                  <selectors:MenuTemplateSelector.MenuText>
+                    <DataTemplate>
+                      <StackPanel
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                      >
+                        <Image
+                          Source="{Binding ImageName}"
+                          Height="20"
+                          VerticalAlignment="Center"
+                        />
+                        <TextBlock 
+                          Margin="16,0,0,0" 
+                          Text="{Binding Label}" 
+                          VerticalAlignment="Center"
+                          Foreground="{StaticResource TextMainBrush}"
+                          FontSize="13"
+                        />
+                      </StackPanel>
+                    </DataTemplate>
+                  </selectors:MenuTemplateSelector.MenuText>
+                  <selectors:MenuTemplateSelector.ItemSeparator>
+                    <DataTemplate>
+                      <StackPanel
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                      >
+                        <Rectangle
+                          Height="2"
+                          Width="20"
+                          Fill="{Binding Color}" 
+                        />
+                        <TextBlock 
+                          Margin="16,0,0,0" 
+                          Text="{Binding Label}" 
+                          Foreground="{Binding Color}"
+                          VerticalAlignment="Center"
+                          FontSize="12"
+                        />
+                      </StackPanel>
+                    </DataTemplate>
+                  </selectors:MenuTemplateSelector.ItemSeparator>
+                  <selectors:MenuTemplateSelector.MenuItemSeparatorFill>
+                    <DataTemplate>
+                      <Grid>
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="Auto" />
+                          <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel
+                          Orientation="Horizontal"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Center"
+                        >
+                          <Rectangle
+                            Grid.Column="0"
+                            Height="1"
+                            Width="800"
+                            Stretch="Fill"
+                            Fill="{Binding Color}" 
+                          />
+                          <Rectangle
+                            Grid.Column="0"
+                            Height="1"
+                            Width="240"
+                            Margin="16,0,0,0" 
+                            Stretch="Fill"
+                            Fill="{Binding Color}" 
+                            Visibility="Collapsed"
+                          />
+                        </StackPanel>
+                      </Grid>
+                    </DataTemplate>
+                  </selectors:MenuTemplateSelector.MenuItemSeparatorFill>
+                </selectors:MenuTemplateSelector>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+        </SplitView.Pane>
+        <SplitView.Content>
+          <Grid x:Name="engagementGrid">
+            <Frame 
+            x:Name="PageContentFrame"
+            Margin="0,0,0,0"
+            Navigated="PageContentFrame_Navigated"
+          >
+              <Frame.ContentTransitions>
+                <TransitionCollection>
+                  <NavigationThemeTransition>
+                    <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                      <EntranceNavigationTransitionInfo/>
+                    </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                  </NavigationThemeTransition>
+                </TransitionCollection>
+              </Frame.ContentTransitions>
+            </Frame>
+            <Grid
+              Height="80"
+              Margin="10"
+              VerticalAlignment="Bottom"
+              Visibility="{Binding InAppNotificationVisibility}"
+            >
+              <controls:InAppNotificationControl
+                ViewModel="{Binding InAppNotification}"
+                CloseTapped="InAppNotificationControl_CloseTapped"
+                Tapped="InAppNotificationControl_Tapped"
+              />
+            </Grid>
+          </Grid>
+        </SplitView.Content>
+      </SplitView>
+    </Grid>
+
+    <Grid
+      Visibility="{Binding PollVisibility}"
+    >
+      <controls:PollControl
+        ViewModel="{Binding Poll}"
+        CloseTapped="PollControl_CloseTapped"
+      />
+    </Grid>
+
+    <Grid
+      Visibility="{Binding AnnouncementVisibility}"
+    >
+      <controls:AnnouncementControl
+        ViewModel="{Binding Announcement}"
+        CloseTapped="AnnouncementControl_CloseTapped"
+        ActionTapped="AnnouncementControl_ActionTapped"
+      />
+    </Grid>
+  </Grid>
+</engagement:EngagementPageOverlay>

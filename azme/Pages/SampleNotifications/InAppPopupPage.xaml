@@ -1,0 +1,76 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<engagement:EngagementPage
+  x:Class="Azme.Pages.InAppPopupPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="using:Azme.Pages"
+  xmlns:engagement="using:Microsoft.Azure.Engagement"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+>
+  <Grid 
+    Background="{StaticResource BackgroundBlueBrush}"
+  >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <ScrollViewer
+      Grid.Row="0"
+      Padding="10,15,10,15"
+    >
+      <StackPanel>
+        <Image
+          Style="{StaticResource NotificationPageImageTop}"
+          Source="/Assets/SampleNotifications/ic_pop_up.png"
+        />
+        <TextBlock
+          Style="{StaticResource NotificationPageTitle}"
+          Margin="0,0,0,15"
+          Text="{Binding Source={StaticResource Strings}, Path=[InAppCouponNotificationMessage]}"
+        />
+        <Button
+          Style="{StaticResource NotificationPagePurpleButton}"
+          Tapped="DisplayInApp_Tapped"
+        >
+          <TextBlock
+            Text="{Binding Source={StaticResource Strings},Path=[InAppCouponNotificationDisplayTitle]}"
+             Style="{StaticResource NotificationPageButtonText}"
+          />
+        </Button>
+        <TextBlock
+          Margin="0,10,0,15"
+          Text="{Binding Source={StaticResource Strings}, Path=[OutOfAppPushNotificationsAnnouncementMessage]}"
+          Style="{StaticResource NotificationPageTinyText}"
+        />
+        <TextBlock
+          Style="{StaticResource NotificationPageTinyBoldText}"
+          Text="{Binding Source={StaticResource Strings}, Path=[NotificationsFooterMentionText]}"
+        />
+      </StackPanel>
+    </ScrollViewer>
+
+    <Grid Grid.Row="1">
+      <Rectangle Style="{StaticResource NotificationFooterSeparator}" />
+      <TextBlock
+        Tapped="TextFooter_Tapped"
+        Style="{StaticResource NotificationPageFooterText}"
+        Text="{Binding Source={StaticResource Strings}, Path=[NotificationsFooterText]}"
+      />
+    </Grid>
+    
+  </Grid>
+</engagement:EngagementPage>
+

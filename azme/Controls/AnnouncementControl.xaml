@@ -1,0 +1,76 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<UserControl
+  x:Class="Azme.Controls.AnnouncementControl"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="using:Azme.Controls"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+>
+  <Grid Background="White">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <StackPanel 
+      Grid.Row="0"
+      Background="{StaticResource PrimaryBrush}"
+      Padding="15"
+    >
+      <TextBlock
+        Text="{Binding ViewModel.Title}"
+        Foreground="{StaticResource TextPrimaryBrush}"
+        FontSize="14"
+        FontWeight="Bold"
+      />
+    </StackPanel>
+    <WebView
+      Grid.Row="1"
+      x:Name="WebView"
+    />
+    <Grid
+      Grid.Row="2"
+      Padding="10,0,10,10"
+      Height="45"
+    >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Button
+        Grid.Column="1"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="5,0,0,0"
+        Background="{StaticResource PrimaryBrush}"
+        Foreground="{StaticResource TextPrimaryBrush}"
+        Content="{Binding Source={StaticResource Strings}, Path=[ReboundClose]}"
+        Tapped="ButtonClose_Tapped"
+      />
+      <Button
+        Grid.Column="0"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="0,0,5,0"
+        Background="{StaticResource PurpleBrush}"
+        Foreground="{StaticResource TextPrimaryBrush}"
+        Content="{Binding Source={StaticResource Strings}, Path=[ReboundViewAll]}"     
+        Tapped="ButtonAction_Tapped"
+      />
+    </Grid>
+  </Grid>
+</UserControl>

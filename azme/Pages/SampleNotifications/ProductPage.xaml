@@ -1,0 +1,82 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<engagement:EngagementPage
+  x:Class="Azme.Pages.ProductPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="using:Azme.Pages"
+  xmlns:engagement="using:Microsoft.Azure.Engagement"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+>
+  <ScrollViewer>
+    <Grid
+      Padding="10,15,10,15"
+    >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <StackPanel Grid.Row="0">
+      <Image
+        Width="Auto"
+        MaxWidth="300"
+        HorizontalAlignment="Left"
+        Source="/Assets/SampleNotifications/Product/product.png"
+      />
+      <TextBlock
+        Margin="0,10,0,10"
+        Text="{Binding Source={StaticResource Strings}, Path=[ProductName]}"
+        Style="{StaticResource NotificationProductPageBigText}"
+      />
+      <TextBlock
+        Margin="0,15,0,10"
+        Text="{Binding Source={StaticResource Strings}, Path=[ProductStartingAt]}"
+        FontWeight="Bold"
+        FontSize="12"
+        Foreground="{StaticResource TextSmallMentionsBrush}"
+      />
+      <TextBlock
+        Margin="0,0,0,15"
+        Text="{Binding Source={StaticResource Strings}, Path=[ProductPrice]}"
+        Style="{StaticResource NotificationProductPageBigText}"
+        FontSize="30"
+      />
+
+      </StackPanel>
+
+      <StackPanel
+        Grid.Row="1"
+        Orientation="Vertical"
+        VerticalAlignment="Bottom"
+        Padding="10"
+        Background="{StaticResource OrangeBrush}"
+      >
+        <TextBlock
+          Text="{Binding Source={StaticResource Strings}, Path=[ProductPurchaseText1]}"
+          Foreground="{StaticResource TextPrimaryBrush}"
+          FontSize="16"
+          FontWeight="Bold"
+        />
+        <TextBlock
+          Text="{Binding Source={StaticResource Strings}, Path=[ProductPurchaseText2]}"
+          Foreground="{StaticResource TextPrimaryBrush}"
+          FontSize="14"
+          TextWrapping="Wrap"
+        />
+      </StackPanel>
+    </Grid>
+  </ScrollViewer>
+</engagement:EngagementPage>

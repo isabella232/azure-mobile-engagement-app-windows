@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<engagement>
+  <agent>
+    <!-- Your application connection string. -->
+    <connectionString>Endpoint=xxxxx</connectionString>
+
+    <!-- [Optional] Indicate whether the agent have to report crash or not. -->
+    <reportCrash>true</reportCrash>
+  </agent>
+  <reach>
+    <!-- [Optional] Indicate whether the native push (WNS) is activated or not. -->
+    <enableNativePush>true</enableNativePush>
+  </reach>
+</engagement>

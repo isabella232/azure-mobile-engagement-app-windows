@@ -1,0 +1,120 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<engagement:EngagementPage
+  x:Class="Azme.Pages.LastUpdatesPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:engagement="using:Microsoft.Azure.Engagement"
+  xmlns:local="using:Azme.Pages"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+>
+  <Grid Background="{StaticResource GreyBrush}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    
+    <ProgressRing
+      Grid.Row="0"
+      VerticalAlignment="Center"
+      HorizontalAlignment="Center"
+      IsActive="{Binding IsLoading}"
+      Height="50"
+      Width="50"
+      Foreground="Black"
+    />
+    <ListView
+      Grid.Row="0"
+      x:Name="ListViewMenu"
+      HorizontalAlignment="Stretch"
+      Margin="15"
+      SelectionMode="Single"
+      SelectionChanged="OnItemClicked"
+      ItemsSource="{Binding FeedUpdateList}"
+      Visibility="{Binding FeedUpdateVisibility}"
+    >
+      <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+          <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+          <Setter Property="Padding" Value="2" />
+          <Setter Property="Margin" Value="0,7,0,7" />
+        </Style>
+      </ListView.ItemContainerStyle>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <Border
+            Style="{StaticResource BorderDefault}"
+            Padding="15"
+          >
+            <StackPanel
+              Orientation="Vertical"
+            >
+              <TextBlock
+                x:Name="LastUpdateTitle"  
+                Text="{Binding Title}"
+                FontWeight="SemiBold"
+                FontSize="15"
+                TextTrimming="CharacterEllipsis"
+                MaxLines="1"
+                Foreground="{StaticResource TextMainBrush}"
+              />
+              <TextBlock
+                x:Name="LastUpdateDate"
+                Text="{Binding PublicationDate}"
+                TextTrimming="CharacterEllipsis"
+                FontSize="12"
+                Foreground="{StaticResource TextSmallMentionsBrush}"
+             />
+              <TextBlock
+                x:Name="LastUpdateText"        
+                Text="{Binding Description}"
+                TextWrapping="Wrap"
+                TextTrimming="CharacterEllipsis"
+                FontSize="15"
+                MaxLines="2"
+                Foreground="{StaticResource TextSecondaryBrush}"
+              />
+            </StackPanel>
+          </Border>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    
+    <StackPanel
+      Visibility="{Binding ErrorVisibility}"
+      VerticalAlignment="Center"
+      HorizontalAlignment="Center"
+    >
+      <Image
+        Source="/Assets/Common/ic_cloud_error.png"
+        Width="100"
+        Height="100"
+      />
+      <TextBlock
+        Text="{Binding Source={StaticResource Strings}, Path=[WebViewErrorTitle]}"
+        Style="{StaticResource ErrorPageTitleText}"
+      />
+      <TextBlock
+        Text="{Binding Source={StaticResource Strings}, Path=[WebViewErrorContent]}"
+        Style="{StaticResource ErrorPageExplainationText}"
+      />
+      <Button
+        x:Name="ButtonRefresh"    
+        Content="{Binding Source={StaticResource Strings}, Path=[WebViewButtonRefresh]}"
+        Style="{StaticResource ErrorPageButton}"
+        Tapped="ButtonRefresh_Tapped"
+      />
+    </StackPanel>
+  </Grid>
+</engagement:EngagementPage>

@@ -1,0 +1,120 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<engagement:EngagementPage
+  x:Class="Azme.Pages.ProductDiscountPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="using:Azme.Pages"
+  xmlns:engagement="using:Microsoft.Azure.Engagement"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+>
+  <ScrollViewer>
+    <Grid
+      Padding="10,15,10,15"
+    >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      
+      <StackPanel Grid.Row="0">
+      <Image
+        Width="Auto"
+        MaxWidth="300"
+        HorizontalAlignment="Left"
+        Source="/Assets/SampleNotifications/Product/product.png"
+      />
+      <TextBlock
+        Margin="0,10,0,10"
+        Text="{Binding Source={StaticResource Strings}, Path=[ProductName]}"
+        Style="{StaticResource NotificationProductPageBigText}"
+      />
+      <TextBlock
+        Margin="0,15,0,10"
+        Text="{Binding Source={StaticResource Strings}, Path=[ProductStartingAt]}"
+        FontSize="12"
+        FontWeight="Bold"
+        Foreground="{StaticResource TextSmallMentionsBrush}"
+      />
+      <StackPanel
+        Orientation="Horizontal"
+      >
+        <Grid VerticalAlignment="Center">
+          <TextBlock
+            Text="{Binding DisplayPrice}"
+            Style="{StaticResource NotificationProductPageBigText}"
+          />
+          <Rectangle
+            Fill="{StaticResource TextMainBrush}"
+            Height="2"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Stretch"
+            Visibility="{Binding DiscountContainerVisibility}"
+          />
+        </Grid>
+        <TextBlock
+          VerticalAlignment="Center"
+          Text="{Binding DisplayFinalPrice}"
+          Style="{StaticResource NotificationProductPageBigText}"
+          Margin="10,0,10,0"
+          Foreground="{StaticResource OrangeBrush}"
+          Visibility="{Binding DiscountContainerVisibility}"
+        />
+        <Grid
+          Visibility="{Binding DiscountContainerVisibility}"
+          Background="{StaticResource OrangeBrush}"
+          Padding="10,5,10,5"
+          VerticalAlignment="Center"
+        >
+          <TextBlock
+            Foreground="{StaticResource TextPrimaryBrush}"
+            FontSize="15"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            Text="{Binding DisplayDiscountPercentValue}"
+          />
+        </Grid>
+      </StackPanel>
+      </StackPanel>
+
+      <StackPanel
+        Grid.Row="1"
+        Orientation="Vertical"
+        Margin="0,0,0,0"
+        VerticalAlignment="Bottom"
+      >
+        <Button
+          Style="{StaticResource NotificationPagePurpleButton}" Click="RemoveDiscount_Click"
+          Visibility="{Binding ButtonRemoveVisibility}"
+        >
+          <TextBlock
+            Text="{Binding Source={StaticResource Strings},Path=[RemoveDiscountUsingDataPush]}"
+            Style="{StaticResource NotificationPageButtonText}"
+          />
+        </Button>
+
+        <Button
+          Style="{StaticResource NotificationPageOrangeButton}" Click="ApplyDiscountButton_Click"
+          Visibility="{Binding ButtonApplyVisibility}"
+        >
+          <TextBlock
+            Text="{Binding Source={StaticResource Strings},Path=[ApplyDiscountUsingDataPush]}"
+             Style="{StaticResource NotificationPageButtonText}"
+          />
+        </Button>
+      </StackPanel>
+    </Grid>
+  </ScrollViewer>
+</engagement:EngagementPage>

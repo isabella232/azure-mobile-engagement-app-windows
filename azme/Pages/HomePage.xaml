@@ -1,0 +1,237 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<engagement:EngagementPage
+  x:Class="Azme.Pages.HomePage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="using:Azme.Controls"
+  xmlns:engagement="using:Microsoft.Azure.Engagement"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+>
+  <Grid Background="{StaticResource OrangeBrush}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Grid
+      Grid.Row="0"
+      Background="{StaticResource BackgroundBlueBrush}"
+    >
+      <Image
+        Source="/Assets/Common/logo_azme.png"
+        Height="75"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Bottom"
+        Margin="0,0,15,0"
+      />
+      <StackPanel
+        x:Name="HeaderContainer"
+        Orientation="Vertical"
+      >
+        <TextBlock
+          Text="{Binding Source={StaticResource Strings}, Path=[HomeTitle]}"
+          FontSize="25"
+          Margin="0,20,0,0"
+          FontWeight="SemiLight"
+          Foreground="{StaticResource TextPrimaryBrush}"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          TextWrapping="Wrap"
+        />
+        <TextBlock
+          Text="{Binding Source={StaticResource Strings}, Path=[HomeSubtitle]}"
+          FontSize="15"
+          Foreground="{StaticResource TextPrimaryBrush}"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          TextWrapping="Wrap"
+          TextAlignment="Center"
+          Margin="0,0,0,25"
+        />
+      </StackPanel>
+    </Grid>
+    <ScrollViewer
+      Grid.Row="1"
+    >
+      <Grid Background="{StaticResource GreyBrush}">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="50" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+          Text="{Binding Source={StaticResource Strings}, Path=[HomeRecentUpdates]}"
+          Grid.Row="0"
+          Height="Auto"
+          Margin="15,0,0,0"
+          FontSize="20"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource PrimaryBrush}"
+        />
+        <Border
+          Grid.Row="0"
+        >
+          <Button
+          x:Name="ButtonAllUpdates"
+          HorizontalAlignment="Right"    
+          Grid.Row="0"
+          Margin="0,0,16,0"
+          FontSize="15"
+          VerticalAlignment="Center"
+          Content="{Binding Source={StaticResource Strings}, Path=[HomeButtonViewAll]}"         Tapped="ButtonAllUpdates_Tapped"
+          Background="{StaticResource PrimaryBrush}"
+          Foreground="{StaticResource TextPrimaryBrush}"
+        />
+        </Border>
+        <!-- Region Last Update Content -->
+        <Border
+          Grid.Row="1"
+          Margin="15,0,15,15"
+          Padding="15"
+          HorizontalAlignment="Stretch"
+          Style="{StaticResource BorderDefault}"
+          MinHeight="100"
+        >
+          <Grid>
+            <StackPanel
+              Visibility="{Binding FeedUpdateVisibility}"
+              Tapped="LastUpdateItem_Tapped"
+            >
+              <TextBlock
+                x:Name="LastUpdateTitle"  
+                Text="{Binding FeedUpdate.Title}"
+                FontWeight="SemiBold"
+                FontSize="15"
+                Foreground="{StaticResource TextMainBrush}"
+                TextTrimming="CharacterEllipsis"
+              />
+              <TextBlock
+                x:Name="LastUpdateDate"
+                Text="{Binding FeedUpdate.PublicationDate}"
+                FontSize="12"
+                Foreground="{StaticResource TextSmallMentionsBrush}"
+                TextTrimming="CharacterEllipsis"
+              />
+              <TextBlock
+                x:Name="LastUpdateText"        
+                Text="{Binding FeedUpdate.Description}"
+                FontSize="15"
+                Foreground="{StaticResource TextSecondaryBrush}"
+                TextWrapping="Wrap"
+                TextTrimming="CharacterEllipsis"
+                MaxLines="2"
+              />
+            </StackPanel>
+            <StackPanel
+              Visibility="{Binding ErrorVisibility}"
+            >
+              <TextBlock
+                Text="{Binding Source={StaticResource Strings}, Path=[WebViewErrorTitle]}"
+                Foreground="{StaticResource TextMainBrush}"
+                FontWeight="SemiBold"
+                FontSize="12"
+                TextAlignment="Center"
+                TextTrimming="CharacterEllipsis"
+              />
+              <TextBlock
+                Text="{Binding Source={StaticResource Strings}, Path=[WebViewErrorContent]}"
+                Foreground="{StaticResource TextSmallMentionsBrush}"
+                TextWrapping="Wrap"
+                TextAlignment="Center"
+                Margin="0,8,0,0"
+                FontSize="12"
+              />
+              <Button
+                x:Name="ButtonRefresh"    
+                Margin="0,10,0,0"
+                Padding="50,5,50,5"
+                Background="{StaticResource PrimaryBrush}"
+                Foreground="{StaticResource TextPrimaryBrush}"
+                Content="{Binding Source={StaticResource Strings}, Path=[WebViewButtonRefresh]}"
+                HorizontalAlignment="Center"
+                FontSize="15"
+                Tapped="ButtonRefresh_Tapped"
+              />
+            </StackPanel>
+            <ProgressRing
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              IsActive="{Binding IsLoading}"
+              Foreground="Black"
+              Width="50"
+              Height="50"
+            />
+          </Grid>
+        </Border>
+        <!-- EndRegion -->
+
+        <!-- Region Hightlights-->
+        <Grid
+          Background="{StaticResource OrangeBrush}"
+          Grid.Row="2"
+          Margin="0"
+          Padding="15"
+        >
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <TextBlock
+            Text="{Binding Source={StaticResource Strings}, Path=[HomeHighlights]}"
+            Grid.Row="0"
+            Width="Auto"
+            Height="Auto"
+            Margin="0"
+            FontSize="20"
+            Style="{StaticResource HightlightText}"
+          />
+          <ItemsControl 
+            ItemsSource="{Binding Hightlights}" 
+            Grid.Row="1"
+            Margin="0,10,0,10"
+          >
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <SymbolIcon
+                    Symbol="Accept"
+                    Margin="0,0,10,0"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    Foreground="White"
+                  />
+                  <TextBlock
+                    x:Name="UpdateText"
+                    Grid.Column="1"
+                    FontSize="13"
+                    Text="{Binding Label}" TextWrapping="Wrap"
+                    Style="{StaticResource HightlightText}"
+                  />
+                </Grid>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </Grid>
+        <!-- EndRegion-->
+      </Grid>
+    </ScrollViewer>
+  </Grid>
+
+</engagement:EngagementPage>

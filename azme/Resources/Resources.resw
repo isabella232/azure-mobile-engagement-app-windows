@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplyDiscountUsingDataPush" xml:space="preserve">
+    <value>Apply discount using data push</value>
+  </data>
+  <data name="BackendDemoUrl" xml:space="preserve">
+    <value>http://aka.ms/azmewindowsdemoapp</value>
+  </data>
+  <data name="DataPushNotificationDisplayTitle" xml:space="preserve">
+    <value>Silent Data push notification</value>
+  </data>
+  <data name="DataPushNotificationFooterMentionText" xml:space="preserve">
+    <value>Displays fictitious product on the Data push screen</value>
+  </data>
+  <data name="DataPushNotificationMessage" xml:space="preserve">
+    <value>Apply customized pricing using silent data push</value>
+  </data>
+  <data name="defaultDiscount" xml:space="preserve">
+    <value>{
+    "isDiscountAvailable" : true,
+    "discountRateInPercent" : 10
+}</value>
+  </data>
+  <data name="FeaturesUrl" xml:space="preserve">
+    <value>http://aka.ms/azmefeatures</value>
+  </data>
+  <data name="FullScreenInterstitialDialogAnnouncementMessage" xml:space="preserve">
+    <value>15% discount on the AdventureWorks Race Bike</value>
+  </data>
+  <data name="FullScreenInterstitialDialogAnnouncementTitle" xml:space="preserve">
+    <value>Deal of the day</value>
+  </data>
+  <data name="FullScreenInterstitialDisplayTitle" xml:space="preserve">
+    <value>Display a full screen interstitial</value>
+  </data>
+  <data name="FullScreenInterstitialMessage" xml:space="preserve">
+    <value>Deal of the day notification using full screen interstitial</value>
+  </data>
+  <data name="GetDeviceIDButtonCopy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="GetDeviceIDButtonShare" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="GetDeviceIDNotice" xml:space="preserve">
+    <value>Get the Device ID and register this device within the platform backend to send notifications from the service.</value>
+  </data>
+  <data name="GetDeviceIDNotifyCopyDone" xml:space="preserve">
+    <value>Your Device ID {0} was copied</value>
+  </data>
+  <data name="HelpfulLinkDocumentationTitle" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="HelpfulLinkDocumentationUrl" xml:space="preserve">
+    <value>http://aka.ms/azmedoclanding</value>
+  </data>
+  <data name="HelpfulLinkMSDN" xml:space="preserve">
+    <value>MSDN support forum</value>
+  </data>
+  <data name="HelpfulLinkMsdnForumUrl" xml:space="preserve">
+    <value>http://aka.ms/azmemsdnforum</value>
+  </data>
+  <data name="HelpfulLinkPricing" xml:space="preserve">
+    <value>Pricing</value>
+  </data>
+  <data name="HelpfulLinkPricingUrl" xml:space="preserve">
+    <value>http://aka.ms/azmepricing</value>
+  </data>
+  <data name="HelpfulLinkSLA" xml:space="preserve">
+    <value>Service Level Agreement (SLA)</value>
+  </data>
+  <data name="HelpfulLinkSlaUrl" xml:space="preserve">
+    <value>http://aka.ms/azmesla</value>
+  </data>
+  <data name="HelpfulLinkSuggest" xml:space="preserve">
+    <value>Suggest product features</value>
+  </data>
+  <data name="HelpfulLinkUserVoiceForumUrl" xml:space="preserve">
+    <value>http://aka.ms/azmeuservoice</value>
+  </data>
+  <data name="HomeButtonViewAll" xml:space="preserve">
+    <value>View all</value>
+  </data>
+  <data name="HomeHighlights" xml:space="preserve">
+    <value>Highlights</value>
+  </data>
+  <data name="HomeHightlight_1" xml:space="preserve">
+    <value>Collect real-time analytics highlighting app users' behavior</value>
+  </data>
+  <data name="HomeHightlight_2" xml:space="preserve">
+    <value>Measure and act on analytics using single dashboard</value>
+  </data>
+  <data name="HomeHightlight_3" xml:space="preserve">
+    <value>Create dynamic segments based on collected data</value>
+  </data>
+  <data name="HomeHightlight_4" xml:space="preserve">
+    <value>Create marketing campaigns/push notifications targeting specific segments</value>
+  </data>
+  <data name="HomeHightlight_5" xml:space="preserve">
+    <value>Send personalized out-of-app notifications, polls and in-app notifications with rich HTML</value>
+  </data>
+  <data name="HomeHightlight_6" xml:space="preserve">
+    <value>Integrate and automate with CRM/CMS/IT systems using open platform APIs</value>
+  </data>
+  <data name="HomeHightlight_7" xml:space="preserve">
+    <value>Find SDKs for all major platforms - iOS, Android, Windows, Windows Phone, Cordova, Xamarin, Unity</value>
+  </data>
+  <data name="HomeSubtitle" xml:space="preserve">
+    <value>Increase app usage and user retention</value>
+  </data>
+  <data name="HomeTitle" xml:space="preserve">
+    <value>Azure Mobile Engagement</value>
+  </data>
+  <data name="InAppCouponNotificationDialogDescription" xml:space="preserve">
+    <value>Use coupon code 59AXDC when checking out</value>
+  </data>
+  <data name="InAppCouponNotificationDialogTitle" xml:space="preserve">
+    <value>Get 20% off on your purchase</value>
+  </data>
+  <data name="InAppCouponNotificationDisplayTitle" xml:space="preserve">
+    <value>Display an In-app pop-up</value>
+  </data>
+  <data name="InAppCouponNotificationMessage" xml:space="preserve">
+    <value>Coupon notification using in-app pop-up</value>
+  </data>
+  <data name="InAppNotificationsMessage" xml:space="preserve">
+    <value>Product update notification using in-app notification</value>
+  </data>
+  <data name="InAppNotificationsNotificationOnlyTitle" xml:space="preserve">
+    <value>Display a "notification only"</value>
+  </data>
+  <data name="InApp_NotificationsAnnouncementTitle" xml:space="preserve">
+    <value>Display an "announcement"</value>
+  </data>
+  <data name="MenuEntryBackend" xml:space="preserve">
+    <value>Application backend</value>
+  </data>
+  <data name="MenuEntryDataPush" xml:space="preserve">
+    <value>Data Push</value>
+  </data>
+  <data name="MenuEntryDeviceID" xml:space="preserve">
+    <value>Get the Device ID</value>
+  </data>
+  <data name="MenuEntryFeatures" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="MenuEntryHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="MenuEntryInApp" xml:space="preserve">
+    <value>In-app</value>
+  </data>
+  <data name="MenuEntryInAppPopup" xml:space="preserve">
+    <value>In-app pop-up</value>
+  </data>
+  <data name="MenuEntryInterstitial" xml:space="preserve">
+    <value>Full screen interstitial</value>
+  </data>
+  <data name="MenuEntryLinks" xml:space="preserve">
+    <value>Helpful links</value>
+  </data>
+  <data name="MenuEntryOutOfApp" xml:space="preserve">
+    <value>Out-of-app/Push</value>
+  </data>
+  <data name="MenuEntryPoll" xml:space="preserve">
+    <value>Poll/Survey</value>
+  </data>
+  <data name="MenuEntryProductResourcesSection" xml:space="preserve">
+    <value>Product Resources</value>
+  </data>
+  <data name="MenuEntrySampleNotificationsSection" xml:space="preserve">
+    <value>Sample Notifications</value>
+  </data>
+  <data name="MenuEntryTwitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="MenuEntryUpdates" xml:space="preserve">
+    <value>Recent Product updates</value>
+  </data>
+  <data name="MenuEntryVideos" xml:space="preserve">
+    <value>Videos</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NotificationButtonFeedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="NotificationButtonShare" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="NotificationsFooterMentionText" xml:space="preserve">
+    <value>Displays sample notification text</value>
+  </data>
+  <data name="NotificationsFooterText" xml:space="preserve">
+    <value>Click here for instructions on how to send these notifications from Mobile Engagement platform</value>
+  </data>
+  <data name="OufOfAppNotificationContentText" xml:space="preserve">
+    <value>Click to see the recent product updates!</value>
+  </data>
+  <data name="OufOfAppNotificationContentTitle" xml:space="preserve">
+    <value>New product update</value>
+  </data>
+  <data name="OuftOfAppNotificationMessage" xml:space="preserve">
+    <value>Product update notification using out-of-app/Push notification</value>
+  </data>
+  <data name="OutOfAppPushNotificationsAnnouncementMessage" xml:space="preserve">
+    <value>Clicking on the notification will open up additional dynamic web view content</value>
+  </data>
+  <data name="OutOfAppPushNotificationsNotificationOnlyMessage" xml:space="preserve">
+    <value>Clicking on the notification will open up a native screen of the app</value>
+  </data>
+  <data name="OutOfAppPushNotificationsNotificationOnlyTitle" xml:space="preserve">
+    <value>Display a "notification only"</value>
+  </data>
+  <data name="OutOfApp_PushNotificationsAnnouncementTitle" xml:space="preserve">
+    <value>Display an "announcement"</value>
+  </data>
+  <data name="PollDisplayTitle" xml:space="preserve">
+    <value>Display a poll notification</value>
+  </data>
+  <data name="PollMentionText" xml:space="preserve">
+    <value>A sample poll/survey notification</value>
+  </data>
+  <data name="PollMessage" xml:space="preserve">
+    <value>Get users feedback using poll notification</value>
+  </data>
+  <data name="ProductDiscountTitle" xml:space="preserve">
+    <value>Product discount</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>AdventureWorks Race Bike</value>
+  </data>
+  <data name="ProductPrice" xml:space="preserve">
+    <value>$899.00</value>
+  </data>
+  <data name="ProductPurchaseText1" xml:space="preserve">
+    <value>20% off on your purchase</value>
+  </data>
+  <data name="ProductPurchaseText2" xml:space="preserve">
+    <value>Use coupon code 59AXDC when checking out</value>
+  </data>
+  <data name="ProductStartingAt" xml:space="preserve">
+    <value>Starting at</value>
+  </data>
+  <data name="RecentProductUpdatesUrl" xml:space="preserve">
+    <value>https://azure.microsoft.com/en-us/updates/feed/?service=mobile-engagement</value>
+  </data>
+  <data name="RemoveDiscountUsingDataPush" xml:space="preserve">
+    <value>Remove discount using data push</value>
+  </data>
+  <data name="TwitterUrl" xml:space="preserve">
+    <value>https://twitter.com/AzureMobileEng</value>
+  </data>
+  <data name="WebViewButtonRefresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="WebViewErrorContent" xml:space="preserve">
+    <value>Please click the 'Refresh' button to try displaying the content again</value>
+  </data>
+  <data name="WebViewErrorTitle" xml:space="preserve">
+    <value>An error occured while loading the page</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="HowToSendTheseNotificationDataPushTitle" xml:space="preserve">
+    <value>How to send silent data push</value>
+  </data>
+  <data name="HowToSendTheseNotificationFullScreenInterstitialTitle" xml:space="preserve">
+    <value>How to send full screen interstitial</value>
+  </data>
+  <data name="HowToSendTheseNotificationInAppPopup_title" xml:space="preserve">
+    <value>How to send in-app pop-up</value>
+  </data>
+  <data name="HowToSendTheseNotificationInAppTitle" xml:space="preserve">
+    <value>How to send in-app</value>
+  </data>
+  <data name="HowToSendTheseNotificationOutOfAppTitle" xml:space="preserve">
+    <value>How to send out-of-app/push</value>
+  </data>
+  <data name="HowToSendTheseNotificationPollTitle" xml:space="preserve">
+    <value>How to send poll</value>
+  </data>
+  <data name="MenuEntryAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutApplicationLicenseUrl" xml:space="preserve">
+    <value>http://aka.ms/azmedemoapplicense</value>
+  </data>
+  <data name="AboutGithubUrl" xml:space="preserve">
+    <value>http://aka.ms/azmewindowsdemoappsource</value>
+  </data>
+  <data name="AboutSmartnsoftUrl" xml:space="preserve">
+    <value>http://smartnsoft.com</value>
+  </data>
+  <data name="AboutThirdPartyNoticesUrl" xml:space="preserve">
+    <value>http://aka.ms/azmedemoappwindowsnotices</value>
+  </data>
+  <data name="FullScreenInterstitialDialogAnnouncementBody" xml:space="preserve">
+    <value>&lt;html&gt;
+      &lt;head&gt;
+        &lt;meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/&gt;
+        &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\"/&gt;
+        &lt;link href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,700\" rel=\"stylesheet\" type=\"text/css\"/&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;img id=\"product\" src=\"images/adventureworks_bicycle.png\" alt=\"\" width=\"250px\" height=\"153px\" /&gt;
+        &lt;div id=\"name\"&gt;AdventureWorks Race Bike&lt;/div&gt;
+        &lt;div id=\"price\"&gt;$899.00&lt;/div&gt;
+        &lt;div id=\"price_with_promotion\"&gt;$764.00&lt;/div&gt;
+        &lt;/br&gt;
+        &lt;div id=\"promotion\"&gt;15% off&lt;/div&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  "]]&gt;</value>
+  </data>
+  <data name="HomeRecentUpdates" xml:space="preserve">
+    <value>Recent updates</value>
+  </data>
+  <data name="NotificationFeedbackEmailSubject" xml:space="preserve">
+    <value>Feedback about the recent update</value>
+  </data>
+  <data name="NotificationShareMessage" xml:space="preserve">
+    <value>Product feedback</value>
+  </data>
+  <data name="InAppNotificationContentText" xml:space="preserve">
+    <value>Click to see the recent product updates!</value>
+  </data>
+  <data name="InAppNotificationContentTitle" xml:space="preserve">
+    <value>New product update</value>
+  </data>
+  <data name="PollNotificationContentText" xml:space="preserve">
+    <value>Click here to provide quick feedback about the app</value>
+  </data>
+  <data name="PollNotificationContentTitle" xml:space="preserve">
+    <value>Product feedback</value>
+  </data>
+  <data name="ReboundNotificationBody" xml:space="preserve">
+    <value>&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+    &lt;link rel= "stylesheet" type= "text/css" href="styles.css"/&gt;
+    &lt;link href="https://fonts.googleapis.com/css?family =Roboto:300,400,700 " rel= "stylesheet "type="text/css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;img src="images/azme_app_logo.png " alt= "" width= "110px" height= "110px" /&gt;
+    &lt;div id="blue_separator"&gt;&lt;/div&gt;
+    &lt;p&gt; &lt;b&gt; Azure Mobile Engagement &lt;/b&gt; is a software-as-a-service (SaaS) user-engagement platform that provides data-driven insights into app usage, real-time user segmentation, and enables contextually-aware push notifications and in-app messaging.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ReboundNotificationTitle" xml:space="preserve">
+    <value>New product update</value>
+  </data>
+  <data name="ReboundTitle" xml:space="preserve">
+    <value>Recent Update</value>
+  </data>
+  <data name="ReboundClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ReboundViewAll" xml:space="preserve">
+    <value>View All</value>
+  </data>
+  <data name="LocalPollAnswerNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="LocalPollAnswerYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="LocalPollButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LocalPollButtonSubmit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="LocalPollDescription" xml:space="preserve">
+    <value>Click this to take a quick 30 second survey!</value>
+  </data>
+  <data name="LocalPollQuestion1" xml:space="preserve">
+    <value>Did you find this app useful?</value>
+  </data>
+  <data name="LocalPollQuestion2" xml:space="preserve">
+    <value>Would you recommend this app to your colleagues?</value>
+  </data>
+</root>

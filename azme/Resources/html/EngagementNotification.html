@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<html>
+<head>
+  <!-- The css property @-ms-viewport is not reliable on UWP webview (Edge), use the meta-tag instead. -->
+  <meta name="viewport" content="width=device-width"/>
+ <link rel="stylesheet" type="text/css" href="styles/EngagementNotificationStyle.css" />
+    <!--<style id="engagement_style" type='text/css'>
+   
+  </style>-->
+    <link rel="stylesheet" type="text/css" href="../styles.css" /> 
+    <script>
+    window.onload = function ()
+    { 
+      /* Fix viewport on mobile devices only. The viewport meta tag is not working on WP 8.1 webview (IE) */
+      //if (navigator.userAgent.match(/IEMobile/i))
+      //{
+      //  document.getElementById('engagement_style').innerHTML += '@-ms-viewport{width: device-width}';
+      //}
+    }
+
+    window.onresize = function truncate()
+    {
+      var img = new Image();
+      img.src = document.getElementById('engagement_notification_image_display').src;
+      var result = img.width + 10 + 'px';
+      document.getElementById('content').style.right = result
+      document.getElementById('content').style.left = '0px';
+    }
+  </script>
+  <title></title>
+</head>
+<body>
+  <div id='engagement_notification_area'>
+    <div id='engagement_action_area'>
+      <div id='icon'>
+        <img id='icon_display' alt='' src='../../Assets/Common/icon_notification.png' />
+      </div>
+      <div id="engagement_less_visible">
+        <div id='content'>
+          <div id='engagement_notification_title'></div>
+          <div id='engagement_notification_message'></div>
+        </div>
+        <div id='engagement_notification_image'>
+          <img id='engagement_notification_image_display' alt='' src='' />
+        </div>
+      </div>
+    </div>
+    <div id='engagement_notification_close'>
+      <img id='engagement_notification_close_image' alt='' src='../../Assets/Common/ic_close.png' />
+    </div>
+  </div>
+</body>
+</html>

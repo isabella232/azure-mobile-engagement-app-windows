@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{3009AF50-6A47-40B9-8E13-6E14BA42BB03}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Azme</RootNamespace>
+    <AssemblyName>Azme</AssemblyName>
+    <DefaultLanguage>en</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Azme_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>7ED6E99542438582DC5291730CCA09520139D3B8</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\Common\azme_app_logo.png" />
+    <Content Include="Assets\Common\icon_notification.scale-100.png" />
+    <Content Include="Assets\Common\icon_notification.scale-400.png" />
+    <Content Include="Assets\Common\icon_notification.scale-200.png" />
+    <Content Include="Assets\Common\azme_app_logo.scale-100.png" />
+    <Content Include="Assets\Common\azme_app_logo.scale-200.png" />
+    <Content Include="Assets\Common\azme_app_logo.scale-400.png" />
+    <Content Include="Assets\Common\ic_close.scale-200.png" />
+    <Content Include="Assets\Common\ic_close.scale-400.png" />
+    <Content Include="Assets\Common\ic_cloud_error.scale-200.png" />
+    <Content Include="Assets\Common\ic_cloud_error.scale-400.png" />
+    <Content Include="Assets\Common\ic_play.scale-200.png" />
+    <Content Include="Assets\Common\ic_play.scale-400.png" />
+    <Content Include="Assets\Common\logo_azme.scale-200.png" />
+    <Content Include="Assets\Common\logo_azme.scale-400.png" />
+    <Content Include="Assets\HelpfulLinks\ic_documentation.scale-200.png" />
+    <Content Include="Assets\HelpfulLinks\ic_documentation.scale-400.png" />
+    <Content Include="Assets\HelpfulLinks\ic_msdn_forum.scale-200.png" />
+    <Content Include="Assets\HelpfulLinks\ic_msdn_forum.scale-400.png" />
+    <Content Include="Assets\HelpfulLinks\ic_pricing.scale-200.png" />
+    <Content Include="Assets\HelpfulLinks\ic_pricing.scale-400.png" />
+    <Content Include="Assets\HelpfulLinks\ic_sla.scale-200.png" />
+    <Content Include="Assets\HelpfulLinks\ic_sla.scale-400.png" />
+    <Content Include="Assets\HelpfulLinks\ic_uservoice_forum.scale-200.png" />
+    <Content Include="Assets\HelpfulLinks\ic_uservoice_forum.scale-400.png" />
+    <Content Include="Assets\Html\About\about.html" />
+    <Content Include="Assets\Common\ic_close.scale-100.png" />
+    <Content Include="Assets\Common\ic_cloud_error.scale-100.png" />
+    <Content Include="Assets\Common\ic_play.scale-100.png" />
+    <Content Include="Assets\Common\logo_azme.scale-100.png" />
+    <Content Include="Assets\HelpfulLinks\ic_documentation.scale-100.png" />
+    <Content Include="Assets\HelpfulLinks\ic_documentation.scale-140.png" />
+    <Content Include="Assets\HelpfulLinks\ic_documentation.scale-180.png" />
+    <Content Include="Assets\HelpfulLinks\ic_msdn_forum.scale-100.png" />
+    <Content Include="Assets\HelpfulLinks\ic_pricing.scale-100.png" />
+    <Content Include="Assets\HelpfulLinks\ic_sla.scale-100.png" />
+    <Content Include="Assets\HelpfulLinks\ic_uservoice_forum.scale-100.png" />
+    <None Include="project.json" />
+    <PRIResource Include="Resources\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AnnouncementControl.xaml.cs">
+      <DependentUpon>AnnouncementControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PollControl.xaml.cs">
+      <DependentUpon>PollControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InAppNotificationControl.xaml.cs">
+      <DependentUpon>InAppNotificationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Discount.cs" />
+    <Compile Include="Models\HelpfulLink.cs" />
+    <Compile Include="Models\MenuItemSeparatorFill.cs" />
+    <Compile Include="Models\MenuItemSeparator.cs" />
+    <Compile Include="Handlers\ProtocolHandler.cs" />
+    <Compile Include="Pages\ResourcesPages\AboutWebPage.xaml.cs">
+      <DependentUpon>AboutWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleNotifications\ProductDiscountPage.xaml.cs">
+      <DependentUpon>ProductDiscountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleNotifications\ProductPage.xaml.cs">
+      <DependentUpon>ProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateSelector\DataTemplateSelector.cs" />
+    <Compile Include="TemplateSelector\MenuTemplateSelector.cs" />
+    <Compile Include="ViewModels\AnnoucementViewModel.cs" />
+    <Compile Include="ViewModels\AnnouncementViewModel.cs" />
+    <Compile Include="ViewModels\PollViewModel.cs" />
+    <Compile Include="ViewModels\NotificationViewModel.cs" />
+    <Compile Include="ViewModels\ProductDiscountViewModel.cs" />
+    <Compile Include="ViewModels\VideoPlayerViewModel.cs" />
+    <Compile Include="Pages\AbstractWebPage.cs" />
+    <Compile Include="Models\Videos.cs" />
+    <Compile Include="Pages\ResourcesPages\VideoPlayerPage.xaml.cs">
+      <DependentUpon>VideoPlayerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResourcesPages\BackendWebPage.xaml.cs">
+      <DependentUpon>BackendWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResourcesPages\FeaturesWebPage.xaml.cs">
+      <DependentUpon>FeaturesWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResourcesPages\VideosPage.xaml.cs">
+      <DependentUpon>VideosPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleNotifications\DataPushPage.xaml.cs">
+      <DependentUpon>DataPushPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleNotifications\OutOfAppPushPage.xaml.cs">
+      <DependentUpon>OutOfAppPushPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleNotifications\PollSurveyPage.xaml.cs">
+      <DependentUpon>PollSurveyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleNotifications\FullScreenInterstitialPage.xaml.cs">
+      <DependentUpon>FullScreenInterstitialPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleNotifications\InAppPopupPage.xaml.cs">
+      <DependentUpon>InAppPopupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleNotifications\InAppPushPage.xaml.cs">
+      <DependentUpon>InAppPushPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WebPage.xaml.cs">
+      <DependentUpon>WebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GetDeviceIdPage.xaml.cs">
+      <DependentUpon>GetDeviceIdPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResourcesPages\HelpfulLinksPage.xaml.cs">
+      <DependentUpon>HelpfulLinksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResourcesPages\TwitterWebPage.xaml.cs">
+      <DependentUpon>TwitterWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\overlay\EngagementBaseOverlay.cs" />
+    <Compile Include="Resources\overlay\EngagementOverlayAnnouncement.xaml.cs">
+      <DependentUpon>EngagementOverlayAnnouncement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\overlay\EngagementOverlayNotification.xaml.cs">
+      <DependentUpon>EngagementOverlayNotification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\overlay\EngagementPageOverlay.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Models\Hightlight.cs" />
+    <Compile Include="Models\AzmeFeed.cs" />
+    <Compile Include="Models\MenuEntry.cs" />
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResourcesPages\LastUpdatesPage.xaml.cs">
+      <DependentUpon>LastUpdatesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Strings.cs" />
+    <Compile Include="Services\AzmeServices.cs" />
+    <Compile Include="ViewModels\AzmeViewModel.cs" />
+    <Compile Include="ViewModels\HelpfulLinksViewModel.Cs" />
+    <Compile Include="ViewModels\LastUpdatesViewModel.cs" />
+    <Compile Include="ViewModels\HomePageViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\VideosViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Html\HowToSendNotification\data_push_notification.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Html\HowToSendNotification\full_screen_interstitial.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Html\HowToSendNotification\in_app.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Html\HowToSendNotification\in_app_popup.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Html\HowToSendNotification\out_of_app.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Html\HowToSendNotification\poll.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Html\Rebound\rebound.html" />
+    <Content Include="Assets\Menu\ic_menu_about.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_about.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_data_push.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_data_push.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_demo_app_backend.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_demo_app_backend.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_features.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_features.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_full_screen.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_full_screen.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_get_device_ID.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_get_device_ID.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_helpful_links.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_helpful_links.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_home.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_home.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_in_app.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_in_app.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_out_of_app.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_out_of_app.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_poll.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_poll.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_pop_up.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_pop_up.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_recent_updates.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_recent_updates.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_twitter.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_twitter.scale-400.png" />
+    <Content Include="Assets\Menu\ic_menu_videos.scale-200.png" />
+    <Content Include="Assets\Menu\ic_menu_videos.scale-400.png" />
+    <Content Include="Assets\SampleNotifications\ic_get_device_ID.scale-100.png" />
+    <Content Include="Assets\SampleNotifications\ic_data_push.scale-100.png" />
+    <Content Include="Assets\SampleNotifications\ic_full_screen.scale-100.png" />
+    <Content Include="Assets\SampleNotifications\ic_in_app.scale-100.png" />
+    <Content Include="Assets\SampleNotifications\ic_out_of_app.scale-100.png" />
+    <Content Include="Assets\SampleNotifications\ic_poll.scale-100.png" />
+    <Content Include="Assets\SampleNotifications\ic_poll.scale-200.png" />
+    <Content Include="Assets\SampleNotifications\ic_pop_up.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_about.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_data_push.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_demo_app_backend.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_features.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_full_screen.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_get_device_ID.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_helpful_links.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_home.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_in_app.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_out_of_app.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_poll.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_pop_up.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_recent_updates.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_twitter.scale-100.png" />
+    <Content Include="Assets\Menu\ic_menu_videos.scale-100.png" />
+    <Content Include="Assets\SampleNotifications\ic_data_push.scale-400.png" />
+    <Content Include="Assets\SampleNotifications\ic_full_screen.scale-400.png" />
+    <Content Include="Assets\SampleNotifications\ic_get_device_ID.scale-400.png" />
+    <Content Include="Assets\SampleNotifications\ic_in_app.scale-400.png" />
+    <Content Include="Assets\SampleNotifications\ic_out_of_app.scale-400.png" />
+    <Content Include="Assets\SampleNotifications\ic_poll.scale-400.png" />
+    <Content Include="Assets\SampleNotifications\ic_data_push.scale-200.png" />
+    <Content Include="Assets\SampleNotifications\ic_full_screen.scale-200.png" />
+    <Content Include="Assets\SampleNotifications\ic_get_device_ID.scale-200.png" />
+    <Content Include="Assets\SampleNotifications\ic_in_app.scale-200.png" />
+    <Content Include="Assets\SampleNotifications\ic_out_of_app.scale-200.png" />
+    <Content Include="Assets\SampleNotifications\ic_pop_up.scale-200.png" />
+    <Content Include="Assets\SampleNotifications\ic_pop_up.scale-400.png" />
+    <Content Include="Assets\SampleNotifications\Product\product.png" />
+    <Content Include="Assets\SmartnsoftLogo.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Html\styles.css" />
+    <Content Include="Assets\Video\mobileengagementoverview_960.png" />
+    <Content Include="Assets\Video\mobileengagementoverview_mid.mp4" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Resources\EngagementConfiguration.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\html\styles\EngagementAnnouncementStyle.css" />
+    <Content Include="Resources\html\styles\EngagementNotificationStyle.css" />
+    <Content Include="Resources\html\EngagementAnnouncement.html" />
+    <Content Include="Resources\html\EngagementNotification.html" />
+    <Content Include="Resources\images\EngagementIconClose.png" />
+    <Content Include="Resources\images\EngagementIconNOk.png" />
+    <Content Include="Resources\images\EngagementIconNotification.png" />
+    <Content Include="Resources\images\EngagementIconOk.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\AnnouncementControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PollControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\InAppNotificationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResourcesPages\AboutWebPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResourcesPages\VideoPlayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResourcesPages\BackendWebPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ResourcesPages\FeaturesWebPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ResourcesPages\VideosPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SampleNotifications\DataPushPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SampleNotifications\OutOfAppPushPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SampleNotifications\PollSurveyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SampleNotifications\FullScreenInterstitialPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SampleNotifications\InAppPopupPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SampleNotifications\InAppPushPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SampleNotifications\ProductDiscountPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SampleNotifications\ProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WebPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\GetDeviceIdPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResourcesPages\HelpfulLinksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResourcesPages\TwitterWebPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\overlay\EngagementOverlayAnnouncement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\overlay\EngagementOverlayNotification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResourcesPages\LastUpdatesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

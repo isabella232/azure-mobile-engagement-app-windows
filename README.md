@@ -1,6 +1,6 @@
 # Azure Mobile Engagement Windows Demo App
 
-The iOS Azure Mobile Engagement demonstration application.
+The Windows Azure Mobile Engagement demonstration application.
 
 Increase app usage and user retention with Azure Mobile Engagement.
 

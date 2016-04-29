@@ -1,37 +1,29 @@
-﻿//*********************************************************
-//
-// Copyright (c) Microsoft. All rights reserved.
-// This code is licensed under the MIT License (MIT).
-// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
-// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
-// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
-// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
-//
-//*********************************************************
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
 
-using Azme.Models;
 using Windows.UI.Xaml;
+using Azme.Models;
 
 namespace Azme.TemplateSelector
 {
-  public class MenuTemplateSelector : DataTemplateSelector
-  {
-    public DataTemplate ItemSeparator { get; set; }
-    public DataTemplate MenuItemSeparatorFill { get; set; }
-    public DataTemplate MenuText { get; set; }
-
-    public override DataTemplate SelectTemplate(object item, DependencyObject container)
+    public class MenuTemplateSelector : DataTemplateSelector
     {
-      if (item is MenuEntry)
-      {
-        return MenuText;
-      }
-      else if(item is MenuItemSeparatorFill)
-      {
-        return MenuItemSeparatorFill; 
-      }
+        public DataTemplate ItemSeparator { get; set; }
+        public DataTemplate MenuItemSeparatorFill { get; set; }
+        public DataTemplate MenuText { get; set; }
 
-      return ItemSeparator;
+        public override DataTemplate SelectTemplate(object item, DependencyObject container)
+        {
+            if (item is MenuEntry)
+            {
+                return MenuText;
+            }
+            else if (item is MenuItemSeparatorFill)
+            {
+                return MenuItemSeparatorFill;
+            }
+
+            return ItemSeparator;
+        }
     }
-  }
 }

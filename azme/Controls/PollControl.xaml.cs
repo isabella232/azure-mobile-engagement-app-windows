@@ -1,64 +1,56 @@
-﻿//*********************************************************
-//
-// Copyright (c) Microsoft. All rights reserved.
-// This code is licensed under the MIT License (MIT).
-// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
-// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
-// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
-// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
-//
-//*********************************************************
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
 
-using Azme.ViewModels;
 using System.Linq;
+using Azme.ViewModels;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 
 namespace Azme.Controls
 {
-  public sealed partial class PollControl : UserControl
-  {
-    public static readonly DependencyProperty viewModelProperty = DependencyProperty.Register("ViewModel", typeof(PollViewModel), typeof(PollControl), new PropertyMetadata(null));
-
-    public event TappedEventHandler CloseTapped;
-
-    public PollControl()
+    public sealed partial class PollControl : UserControl
     {
-      this.InitializeComponent();
+        public static readonly DependencyProperty viewModelProperty = DependencyProperty.Register("ViewModel", typeof(PollViewModel), typeof(PollControl), new PropertyMetadata(null));
 
-      var content = Content as FrameworkElement;
-      content.DataContext = this;
-    }
+        public event TappedEventHandler CloseTapped;
 
-    public PollViewModel ViewModel
-    {
-      get { return (PollViewModel)GetValue(viewModelProperty); }
-      set { SetValue(viewModelProperty, value); }
-    }
-
-    private void ButtonCancel_Tapped(object sender, TappedRoutedEventArgs e)
-    {
-      CloseTapped?.Invoke(sender, e);
-    }
-
-    private void ButtonAction_Tapped(object sender, TappedRoutedEventArgs e)
-    {
-      CloseTapped?.Invoke(sender, e);
-    }
-
-    private void RadioButton_Checked(object sender, RoutedEventArgs e)
-    {
-      var radioButton = sender as RadioButton;
-      if (string.IsNullOrEmpty(radioButton?.GroupName) == false)
-      {
-        var question = ViewModel?.Questions?.FirstOrDefault(q => radioButton.GroupName.Equals(q.Label));
-        if (question != null)
+        public PollControl()
         {
-          question.IsAnswered = true;
+            this.InitializeComponent();
+
+            var content = Content as FrameworkElement;
+            content.DataContext = this;
         }
-      }
-      ViewModel.IsComplete = (ViewModel.Questions.Count(q => q.IsAnswered == false) == 0);
+
+        public PollViewModel ViewModel
+        {
+            get { return (PollViewModel)GetValue(viewModelProperty); }
+            set { SetValue(viewModelProperty, value); }
+        }
+
+        private void ButtonCancel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            CloseTapped?.Invoke(sender, e);
+        }
+
+        private void ButtonAction_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            CloseTapped?.Invoke(sender, e);
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            var radioButton = sender as RadioButton;
+            if (string.IsNullOrEmpty(radioButton?.GroupName) == false)
+            {
+                var question = ViewModel?.Questions?.FirstOrDefault(q => radioButton.GroupName.Equals(q.Label));
+                if (question != null)
+                {
+                    question.IsAnswered = true;
+                }
+            }
+            ViewModel.IsComplete = (ViewModel.Questions.Count(q => q.IsAnswered == false) == 0);
+        }
     }
-  }
 }

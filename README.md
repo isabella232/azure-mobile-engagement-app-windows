@@ -1,16 +1,16 @@
 # Azure Mobile Engagement Windows Demo App
 
-The Windows Azure Mobile Engagement demonstration application.
+The Azure Mobile Engagement demonstration application.
 
 Increase app usage and user retention with Azure Mobile Engagement.
 
 - Collect real-time analytics that highlight users’ behavior
-- Measure and act on analytics using single dashboard
+- Measure and act on analytics using a single dashboard
 - Create dynamic segments based on collected data
 - Create marketing campaigns/push notifications targeting specific segments
 - Send personalized out-of-app notifications, polls, and in-app notifications with rich HTML
 - Integrate and automate with CRM/CMS/IT systems using open-platform APIs
-- Find SDKs for all major platforms—iOS, Android, Windows, Windows Phone 
+- Find SDKs for all major platforms: iOS, Android, Windows, Windows Phone 
 
 ![image](./AzME-Demo.png)
 
@@ -20,8 +20,8 @@ Increase app usage and user retention with Azure Mobile Engagement.
 
 ### Requirements
 
+- Visual Studio 2015, the application is written in C# and targets the Universal Windows Platform
 - NuGet : See https://nuget.org
-- Visual Studio 2015, the application is written in C#/.Net and targets Universal Windows Platform
 
 ### Installation 
 
@@ -36,15 +36,15 @@ To test the SDK and AzME Platform, configure your Endpoint in `Resources/Engagem
 ```
     <connectionString>Endpoint=Your_application_endpoint</connectionString>
 ```
-You have to configure an Endpoint otherwise you cannot be able to test the app correctly with the SDK.
+You have to configure an Endpoint otherwise you will not be able to test the app correctly with the SDK.
 
 You can see detailed instructions in the application to discover how to implement notification campaigns in Azure Mobile Engagement back-end. 
 
 ## Documentation
 
-Official documentation is available on [Azure Mobile Engagement Website](https://azure.microsoft.com/en-us/documentation/services/mobile-engagement/)
+Documentation is available at [https://azure.microsoft.com/en-us/documentation/services/mobile-engagement/](https://azure.microsoft.com/en-us/documentation/services/mobile-engagement/)
 
-## Licence : MIT
+## License : MIT
 
 Azure Mobile Engagement App
 Copyright (c) Microsoft Corporation

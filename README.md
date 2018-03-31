@@ -1,3 +1,5 @@
+# Azure Mobile Engagement service has been retired and is no longer available.
+
 # Azure Mobile Engagement Windows Demo App
 
 The Azure Mobile Engagement demonstration application.
